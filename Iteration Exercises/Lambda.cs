@@ -5,7 +5,7 @@ namespace Iteration_Exercises
 	{
 
         public static Func<string, string> Greet = name => "Hi " + name;
-        public static Func<string, string, string> Title = (honorific, name) => throw new NotImplementedException();
+        public static Func<string, string, string> Title = (honorific, name) => $"{honorific} {name}";
         public static Func<string, bool> StartsWithA = name => name.StartsWith("A");
         public static Func<string, int> NameLength = name => name.Length;
         public static Func<string, string, bool> AreNamesSame = (name1, name2) => name1 == name2;
@@ -67,6 +67,10 @@ namespace Iteration_Exercises
          * Once you've created those methods, talk to Alex about how large a 
          * dataset you could use them with, and why
          */
+
+        public static IEnumerable<string> MapToGreetings(this IEnumerable<string> names)
+        {
+            return names.Select(Lambda.Greet);
+        }
     }
 }
-

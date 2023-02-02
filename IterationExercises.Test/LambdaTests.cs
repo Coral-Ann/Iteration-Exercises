@@ -11,7 +11,6 @@ public class LambdaTests
     }
 
     [Test]
-    [Ignore("Not implemented yet - please work through looping material first")]
     public void LambdaGivesTitle()
     {
         Assert.That(Lambda.Title("Mx", "Addison"), Is.EqualTo("Mx Addison"));
@@ -68,5 +67,15 @@ public class LambdaTests
         var names = new List<string> { "Alice", "Alice", "Bob", "Carol" };
         IEnumerable<string> expected = new List<string> { "Alice", "Bob", "Carol" };
         Assert.That(Lambda.GetUniqueNames(names), Is.EquivalentTo(expected));
+    }
+
+    [Test]
+    public void TestMapToGreetings()
+    {
+        List<string> names = new List<string> { "Alice", "Bob", "Carol" };
+        IEnumerable<string> expectedGreetings = new List<string> { "Hi Alice", "Hi Bob", "Hi Carol" };
+        IEnumerable<string> greetings = names.MapToGreetings();
+
+        CollectionAssert.AreEqual(expectedGreetings, greetings);
     }
 }

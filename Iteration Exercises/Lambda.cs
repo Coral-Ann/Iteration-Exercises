@@ -53,6 +53,11 @@ namespace Iteration_Exercises
             return names.Where(StartsWithA);
         }
 
+        public static IEnumerable<int> GetNameLengths(IEnumerable<string> names)
+        {
+            return names.Select(NameLength);
+        }
+
         /* using the lambdas you created above, test-drive methods to:
          * filter and include only names beginning with A
          * get a list of name lengths

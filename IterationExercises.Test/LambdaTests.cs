@@ -53,4 +53,12 @@ public class LambdaTests
         IEnumerable<string> expected = new List<string> { "Alice" };
         Assert.That(Lambda.GetNamesStartingWithA(names), Is.EquivalentTo(expected));
     }
+
+    [Test]
+    public void GetsNameLengths()
+    {
+        var names = new List<string> { "Alice", "Bob", "Carol" };
+        IEnumerable<int> expected = new List<int> { 5, 3, 5 };
+        Assert.That(Lambda.GetNameLengths(names), Is.EquivalentTo(expected));
+    }
 }

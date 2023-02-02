@@ -77,5 +77,10 @@ namespace Iteration_Exercises
         {
             return names.Where(StartsWithA);
         }
+
+        public static int ReduceNameLengthCount(this IEnumerable<string> names)
+        {
+            return names.Aggregate(0, (acc, name) => acc + Lambda.NameLength(name));
+        }
     }
 }

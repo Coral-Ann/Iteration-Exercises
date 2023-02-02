@@ -88,4 +88,15 @@ public class LambdaTests
 
         CollectionAssert.AreEqual(new[] { "Alice" }, filteredNames);
     }
+
+    [Test]
+    public void ReduceNameLengthCount()
+    {
+        List<string> names = new List<string> { "Alice", "Bob", "Carol" };
+        int expectedResult = 13;
+
+        int result = names.ReduceNameLengthCount();
+
+        Assert.AreEqual(expectedResult, result);
+    }
 }

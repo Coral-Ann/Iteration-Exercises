@@ -65,6 +65,17 @@ public static class Looping
      * Research why we'd want to use yield return, and implement it
      */
 
+    /* NOTES ON YIELD RETURN::
+     
+     - 'yield return' is used when you want to generate a sequence of values as a result of an iteration, 
+        without creating a temporary collection to store the result in memory.
+     - When using 'yield return', the code execution is paused each time a value is returned, 
+        and resumes when the next value is requested.
+     - Cleaner and easier to read.
+     - Useful in situations where the result is too large to fit in memory, or where you want to start
+        processing the result before the entire iteration is complete.
+     */
+
     /* Bonus material 2:
      * Write an extension method so we can use a while loop directly on our List
      * Using it should look like this: `new List<string>{"Alex"}.WhileLoopExtension()`

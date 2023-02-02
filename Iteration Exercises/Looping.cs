@@ -43,6 +43,16 @@ public static class Looping
         return names.Select(name => "Hello " + name);
     }
 
+    public static IEnumerable<string> WithAggregate(IList<string> names)
+    {
+        return names.Aggregate(new List<string>(), (acc, name) =>
+        {
+            acc.Add("Hello " + name);
+            return acc;
+        });
+    }
+
+
     /* Test drive equivalent implementations using:
      * A for loop `for(;;)`
      * A foreach loop

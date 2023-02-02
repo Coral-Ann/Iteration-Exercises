@@ -38,6 +38,11 @@ public static class Looping
         return output;
     }
 
+    public static IEnumerable<string> WithSelect(IList<string> names)
+    {
+        return names.Select(name => "Hello " + name);
+    }
+
     /* Test drive equivalent implementations using:
      * A for loop `for(;;)`
      * A foreach loop

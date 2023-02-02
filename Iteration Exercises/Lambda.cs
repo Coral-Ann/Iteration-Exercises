@@ -3,7 +3,6 @@ namespace Iteration_Exercises
 {
 	public static class Lambda
 	{
-        // Please work through the initial questions in Looping.cs first, before working on this material
 
         public static Func<string, string> Greet = name => "Hi " + name;
         public static Func<string, string, string> Title = (honorific, name) => throw new NotImplementedException();
@@ -11,21 +10,7 @@ namespace Iteration_Exercises
         public static Func<string, int> NameLength = name => name.Length;
         public static Func<string, string, bool> AreNamesSame = (name1, name2) => name1 == name2;
 
-
-
-        /* Test-drive more lambdas which will:
-         * Check if a name starts with "A"
-         * Give the length of a name
-         * Check if 2 names are the same
-         */
-
-        /* Discussion question: should name be a string? 
-         * Talk to Alex with reasons both for and against - you'll want at 
-         * least one reason on each side!
-         */
-
         /*
-         
          Pros of using 'name' as a string:
 
             - String is a commonly used data type for representing names and is easily understandable.
@@ -38,10 +23,7 @@ namespace Iteration_Exercises
             - Using string for representing names might not be flexible enough to accommodate 
                 other data types or formats that may be needed for representing names.
             - Processing large strings could affect the performance of the application.
-
-         */
-
-        /* ===== PART TWO ===== */
+        */
 
         public static IEnumerable<string> GreetAll(IEnumerable<string> names)
         {
@@ -58,11 +40,22 @@ namespace Iteration_Exercises
             return names.Select(NameLength);
         }
 
-        /* using the lambdas you created above, test-drive methods to:
-         * filter and include only names beginning with A
-         * get a list of name lengths
-         * keep only unique names in the list given
-         */
+        // Could just use return names.Distinct(); for the following but wanted to try with lambda!
+
+        public static IEnumerable<string> GetUniqueNames(IEnumerable<string> names)
+        {
+            List<string> uniqueNames = new List<string>();
+
+            foreach (var name in names)
+            {
+                if (!uniqueNames.Any(comparedName => AreNamesSame(comparedName, name)))
+                {
+                    uniqueNames.Add(name);
+                }
+            }
+
+            return uniqueNames;
+        }
 
         /* ===== BONUS WORK ===== */
 

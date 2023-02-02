@@ -61,4 +61,12 @@ public class LambdaTests
         IEnumerable<int> expected = new List<int> { 5, 3, 5 };
         Assert.That(Lambda.GetNameLengths(names), Is.EquivalentTo(expected));
     }
+
+    [Test]
+    public void GetsUniqueNames()
+    {
+        var names = new List<string> { "Alice", "Alice", "Bob", "Carol" };
+        IEnumerable<string> expected = new List<string> { "Alice", "Bob", "Carol" };
+        Assert.That(Lambda.GetUniqueNames(names), Is.EquivalentTo(expected));
+    }
 }

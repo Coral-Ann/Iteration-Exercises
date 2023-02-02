@@ -41,6 +41,10 @@ public static class Looping
         });
     }
 
+    public static IEnumerable<string> WhileLoopExtension(this List<string> names)
+    {
+        return Looping.WhileLoop(names);
+    }
 
     /* Test drive equivalent implementations using:
      * A for loop `for(;;)`
@@ -54,7 +58,7 @@ public static class Looping
      * Research why we'd want to use yield return, and implement it
      */
 
-    /* NOTES ON YIELD RETURN::
+    /* NOTES ON YIELD RETURN:
      
      - 'yield return' is used when you want to generate a sequence of values as a result of an iteration, 
         without creating a temporary collection to store the result in memory.

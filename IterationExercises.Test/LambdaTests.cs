@@ -25,4 +25,10 @@ public class LambdaTests
         IEnumerable<string> expected = new List<string> { "Hi Alice", "Hi Bob", "Hi Carol" };
         Assert.That(Lambda.GreetAll(names), Is.EquivalentTo(expected));
     }
+
+    [Test]
+    public void LambdaStartsWithA()
+    {
+        Assert.That(Lambda.StartsWithA("Alex"), Is.True);
+    }
 }

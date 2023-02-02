@@ -7,6 +7,8 @@ namespace Iteration_Exercises
 
         public static Func<string, string> Greet = name => "Hi " + name;
         public static Func<string, string, string> Title = (honorific, name) => throw new NotImplementedException();
+        public static Func<string, bool> StartsWithA = name => name.StartsWith("A");
+
 
         /* Test-drive more lambdas which will:
          * Check if a name starts with "A"

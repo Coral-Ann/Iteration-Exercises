@@ -4,38 +4,27 @@ public static class Looping
     public static IEnumerable<string> WhileLoop(IList<string> names)
     {
         int i = 0;
-        string[] output = new string[names.Count()];
-        while (i < names.Count())
+        while (i < names.Count)
         {
-            output[i] = "Hello " + names[i];
+            yield return $"Hello {names[i]}";
             i++;
         }
-
-        return output;
     }
 
     public static IEnumerable<string> ForLoop(IList<string> names)
     {
-        string[] output = new string[names.Count()];
-        for (int i = 0; i < names.Count(); i++)
+        for (int i = 0; i < names.Count; i++)
         {
-            output[i] = "Hello " + names[i];
+            yield return $"Hello {names[i]}";
         }
-
-        return output;
     }
 
     public static IEnumerable<string> ForEachLoop(IList<string> names)
     {
-        int i = 0;
-        string[] output = new string[names.Count()];
         foreach (var name in names)
         {
-            output[i] = "Hello " + name;
-            i++;
+            yield return $"Hello {name}";
         }
-
-        return output;
     }
 
     public static IEnumerable<string> WithSelect(IList<string> names)

@@ -70,12 +70,22 @@ public class LambdaTests
     }
 
     [Test]
-    public void TestMapToGreetings()
+    public void MapsToGreetings()
     {
         List<string> names = new List<string> { "Alice", "Bob", "Carol" };
         IEnumerable<string> expectedGreetings = new List<string> { "Hi Alice", "Hi Bob", "Hi Carol" };
         IEnumerable<string> greetings = names.MapToGreetings();
 
         CollectionAssert.AreEqual(expectedGreetings, greetings);
+    }
+
+    [Test]
+    public void FiltersNamesStartingWithA()
+    {
+        var names = new List<string> { "Alice", "Bob", "Carol", "Darren" };
+
+        var filteredNames = names.FilterNamesStartingWithA();
+
+        CollectionAssert.AreEqual(new[] { "Alice" }, filteredNames);
     }
 }

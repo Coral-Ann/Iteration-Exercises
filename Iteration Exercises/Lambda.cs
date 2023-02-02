@@ -72,5 +72,10 @@ namespace Iteration_Exercises
         {
             return names.Select(Lambda.Greet);
         }
+
+        public static IEnumerable<string> FilterNamesStartingWithA(this IEnumerable<string> names)
+        {
+            return names.Where(StartsWithA);
+        }
     }
 }

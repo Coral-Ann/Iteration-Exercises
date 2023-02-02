@@ -8,6 +8,7 @@ namespace Iteration_Exercises
         public static Func<string, string> Greet = name => "Hi " + name;
         public static Func<string, string, string> Title = (honorific, name) => throw new NotImplementedException();
         public static Func<string, bool> StartsWithA = name => name.StartsWith("A");
+        public static Func<string, int> NameLength = name => name.Length;
 
 
         /* Test-drive more lambdas which will:

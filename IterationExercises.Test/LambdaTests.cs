@@ -31,4 +31,10 @@ public class LambdaTests
     {
         Assert.That(Lambda.StartsWithA("Alex"), Is.True);
     }
+
+    [Test]
+    public void LambdaNameLength()
+    {
+        Assert.That(Lambda.NameLength("Alex"), Is.EqualTo(4));
+    }
 }

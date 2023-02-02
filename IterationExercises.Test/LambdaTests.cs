@@ -10,20 +10,11 @@ public class LambdaTests
         Assert.That(Lambda.Greet("Alex"), Is.EqualTo("Hi Alex"));
     }
 
-
     [Test]
     [Ignore("Not implemented yet - please work through looping material first")]
     public void LambdaGivesTitle()
     {
         Assert.That(Lambda.Title("Mx", "Addison"), Is.EqualTo("Mx Addison"));
-    }
-
-    [Test]
-    public void GreetsAll()
-    {
-        var names = new List<string> { "Alice", "Bob", "Carol" };
-        IEnumerable<string> expected = new List<string> { "Hi Alice", "Hi Bob", "Hi Carol" };
-        Assert.That(Lambda.GreetAll(names), Is.EquivalentTo(expected));
     }
 
     [Test]
@@ -37,4 +28,22 @@ public class LambdaTests
     {
         Assert.That(Lambda.NameLength("Alex"), Is.EqualTo(4));
     }
+
+    [Test]
+    public void LambdaAreNamesSameTest()
+    {
+        string name1 = "Alice";
+        string name2 = "Bob";
+        bool expected = false;
+        Assert.That(Lambda.AreNamesSame(name1, name2), Is.EqualTo(expected));
+    }
+
+    [Test]
+    public void GreetsAll()
+    {
+        var names = new List<string> { "Alice", "Bob", "Carol" };
+        IEnumerable<string> expected = new List<string> { "Hi Alice", "Hi Bob", "Hi Carol" };
+        Assert.That(Lambda.GreetAll(names), Is.EquivalentTo(expected));
+    }
+
 }

@@ -14,6 +14,17 @@ public static class Looping
         return output;
     }
 
+    public static IEnumerable<string> ForLoop(IList<string> names)
+    {
+        string[] output = new string[names.Count()];
+        for (int i = 0; i < names.Count(); i++)
+        {
+            output[i] = "Hello " + names[i];
+        }
+
+        return output;
+    }
+
     /* Test drive equivalent implementations using:
      * A for loop `for(;;)`
      * A foreach loop

@@ -46,4 +46,11 @@ public class LambdaTests
         Assert.That(Lambda.GreetAll(names), Is.EquivalentTo(expected));
     }
 
+    [Test]
+    public void GetsNamesStartingWithA()
+    {
+        var names = new List<string> { "Alice", "Bob", "Carol" };
+        IEnumerable<string> expected = new List<string> { "Alice" };
+        Assert.That(Lambda.GetNamesStartingWithA(names), Is.EquivalentTo(expected));
+    }
 }
